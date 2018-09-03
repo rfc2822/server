@@ -49,7 +49,7 @@ class ContentSecurityPolicy extends EmptyContentSecurityPolicy {
 	 * TODO: Disallow per default
 	 * @link https://github.com/owncloud/core/issues/11925
 	 */
-	protected $evalScriptAllowed = true;
+	protected $evalScriptAllowed = false;
 	/** @var array Domains from which scripts can get loaded */
 	protected $allowedScriptDomains = [
 		'\'self\'',
