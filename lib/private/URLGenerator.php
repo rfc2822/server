@@ -91,6 +91,14 @@ class URLGenerator implements IURLGenerator {
 		return $this->getAbsoluteURL($this->linkToRoute($routeName, $arguments));
 	}
 
+	public function linkToOCSRouteAbsolute(string $routeName, array $arguments = []): string {
+		$route = \OC::$server->getRouter()->generate('ocs.'.$routeName, $arguments);
+		$route = substr($route, 7);
+		$route = '/ocs/v2.php' . $route;
+
+		return $this->getAbsoluteURL($route);
+	}
+
 	/**
 	 * Creates an url
 	 * @param string $app app
